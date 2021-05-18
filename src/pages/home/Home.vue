@@ -160,7 +160,7 @@ export default {
         this.$refs.useScroll.bs.finishPullUp()
       })
     },
-
+   
   },
   computed: {
     showView() {

@@ -1,13 +1,12 @@
 <template>
-  <nav-bar class="home-nav">
-    <div slot="left" class="home-nav-left">
-      <img src="~assets/img/home/benchi.jpg" alt="">
-    </div>
-    <div slot="center" class="home-nav-center">Bc-柠檬</div>
-    <div slot="right" class="home-nav-right">
-      <span @click="denglu">登录</span>
-    </div>
-  </nav-bar>
+  <div class="home-nav-bar" @click="search">
+    <nav-bar>
+      <div class="el-icon-s-fold" slot="left"/>
+      <div class="center " slot="center">
+        <span class="el-icon-search">search</span>
+      </div>
+    </nav-bar>
+  </div>
 </template>
 
 <script>
@@ -21,33 +20,31 @@ export default {
   methods:{
     denglu(){
       this.$router.push('/login')
+    },
+     search() {
+       this.$router.replace("/inputSearch")
     }
   }
 }
 </script>
 
 <style scoped>
-.home-nav {
-  background-color: var(--color-tint);
-  color: white;
-  font-weight: bold;
-
+.home-nav-bar {
+  background-color: #DC143C;;
 }
-
-.home-nav-left img {
-  margin-top: 5px;
-  width: 34px;
-  height: 34px;
+.el-icon-s-fold {
+  font-size: 24px;
 }
-
-.home-nav-center {
-  font-size: 30px;
+.center {
+  margin: 4px 15px;
+  width: 70vw;
+  height: 35px;
+  font-size: 18px;
+  background-color: #ffffff;
+  border-radius: 30px;
 }
-
-.home-nav-right span {
-  width: 28px;
-  height: 21px;
-  font-size: 19px;
+.el-icon-headset {
+  font-size: 24px;
 }
 
 </style>

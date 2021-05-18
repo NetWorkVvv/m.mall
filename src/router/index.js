@@ -8,6 +8,7 @@ const Profile = () => import('../pages/profile/Profile')
 const Detail = () => import('../pages/detail/Detail')
 const Supermarket = () => import("../pages/supermarket/Supermarket");
 const Login = () => import('../pages/Login/Login')
+const inputSearch = () => import('../components/commonV/inputSearch/inputSearch.vue')
 Vue.use(VueRouter)
 
 const routes = [
@@ -45,6 +46,10 @@ const routes = [
   {
     path: '/login',
     component:Login
+  },
+  {
+    path: '/inputSearch',
+    component:inputSearch
   }
 ]
 

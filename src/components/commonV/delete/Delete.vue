@@ -1,15 +1,13 @@
 <template>
   <div class="delete">
     <div class="showTime">
-      <div class="el-icon-warning-outline"/>
+      <div class="el-icon-warning-outline" />
       <p class="sure">确认删除此商品?</p>
       <div class="select">
         <span class="se select1">取消</span>
         <span class="se select2">删除</span>
       </div>
     </div>
-    <!-- 遮盖层 -->
-    <div id="bg" class="login-bg"/>
   </div>
 </template>
 
@@ -26,14 +24,13 @@ export default {
 </script>
 
 <style scoped>
-
 .el-icon-warning-outline {
   position: relative;
   left: 50%;
   transform: translate(-50%);
   margin: 4px 0;
   font-size: 55px;
-  color: #DC143C;
+  color: #dc143c;
 }
 
 .sure {
@@ -60,13 +57,13 @@ export default {
 }
 
 .select2 {
-  background-color: #DC143C;
+  background-color: #dc143c;
   color: #ffffff;
-  margin: 0 10px 0 10px
+  margin: 0 10px 0 10px;
 }
 
 .login-bg {
-  background-color: rgba(0, 0, 0, .4);
+  background-color: rgba(0, 0, 0, 0.4);
   width: 100%; /*宽度设置为100%，这样才能使隐藏背景层覆盖原页面*/
   height: 100%;
   display: none;
