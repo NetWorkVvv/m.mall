@@ -1,19 +1,28 @@
 <template>
   <div id="bottom-bar">
-    <check-button class="checkbox" :is-checked="isSelectAll" @click.native="isSelectAllClick"/>
-    <span class="checkbox-text" slot="text">
-        <div class="checkbox-all">全选</div>
-        <div class="checkbox-incs">总计:¥{{ totalPrice.toFixed(2) }}</div>
-        <div class="checkbox-mai" @click="payClick">去结算({{ checkedNum }})</div>
-      </span>
-
+    <check-button
+      class="checkbox"
+      :is-checked="isSelectAll"
+      @click.native="isSelectAllClick"
+    />
+    <span
+      class="checkbox-text"
+      slot="text"
+    >
+      <div class="checkbox-all">全选</div>
+      <div class="checkbox-incs">总计:¥{{ totalPrice.toFixed(2) }}</div>
+      <div
+        class="checkbox-mai"
+        @click="payClick"
+      >去结算({{ checkedNum }})</div>
+    </span>
 
   </div>
 </template>、
 
 <script>
 import CheckButton from "@/components/commonV/checkButton/CheckButton";
-import {mapGetters} from 'vuex'
+import { mapGetters } from 'vuex'
 
 export default {
   name: "CartsBottomBar",
@@ -35,9 +44,16 @@ export default {
       }, 0)
     },
     checkedNum() {
-      return this.getCartsList.filter(item => {
-        return item.checked
-      }).length
+      // 1
+      // let countAll = 0
+      // this.getCartsList.filter(item =>  item.checked).forEach(item => countAll += item.count)
+      // return countAll
+
+      // 2累加器 相当于 total += item.count
+      return this.getCartsList.filter(item => item.checked).reduce((total, item) => {
+        return total + item.count
+      }, 0)
+
     },
     isSelectAll() {
       // ! (在getCartsList寻找 checked没选中的实例 找到为 true 否则为 false)
@@ -54,8 +70,8 @@ export default {
       }
     },
     payClick() {
-      if(!this.getCartsList.find(item => item.checked)) {
-        this.$toast.showTime('还未选中商品',1500)
+      if (!this.getCartsList.find(item => item.checked)) {
+        this.$toast.showTime('还未选中商品', 1500)
 
       }
     }
@@ -69,9 +85,9 @@ export default {
   width: 100vw;
   height: 44px;
 
-  background-color: rgba(245, 245, 245, .5);
+  background-color: rgba(245, 245, 245, 0.5);
   position: fixed;
-  bottom:7.5%;
+  bottom: 7.5%;
 }
 
 .checkbox {
@@ -84,7 +100,7 @@ export default {
   position: relative;
   left: 3px;
   top: 5px;
-  color: #DC143C;
+  color: #dc143c;
 }
 
 .checkbox-all {
@@ -112,8 +128,7 @@ export default {
   width: 130px;
   padding: 7px 0;
   color: white;
-  background-color: #DC143C;
+  background-color: #dc143c;
   border-radius: 20px;
 }
-
 </style>

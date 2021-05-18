@@ -8,14 +8,20 @@
     </div>
 
     <div class="item-img">
-      <img :src="cartsMainList.image" alt="商品图片" />
+      <img
+        :src="cartsMainList.image"
+        alt="商品图片"
+      />
     </div>
 
     <div class="item-info">
       <div class="item-title">
         <span class="el-icon-s-shop" />
         <span @click="shopClick">&nbsp;{{ cartsMainList.shopName }}</span>
-        <button class="el-icon-delete" @click="delBtn" />
+        <button
+          class="el-icon-delete"
+          @click="delBtn"
+        />
       </div>
 
       <div class="item-desc">商品描述: {{ cartsMainList.infoTitle }}</div>
@@ -24,20 +30,36 @@
         <div class="item-price left">¥{{ cartsMainList.price }}</div>
 
         <div class="item-count right">
-          <button class="item-count-btn" @click="ajjClick" ref="btnAjj">
+          <button
+            class="item-count-btn"
+            @click="ajjClick"
+          >
+            <!-- :disabled="cartsMainList.count<=1" -->
             -
           </button>
           <span class="item-count-text">{{ cartsMainList.count }}</span>
-          <button class="item-count-btn" @click="addClick">+</button>
+          <button
+            class="item-count-btn"
+            @click="addClick"
+          >+</button>
         </div>
       </div>
 
-      <div class="showTime" v-show="isDelete">
+      <div
+        class="showTime"
+        v-show="isDelete"
+      >
         <div class="el-icon-warning-outline" />
         <p class="sure">确认删除此商品?</p>
         <div class="select">
-          <span class="se select1" @click="inOff">取消</span>
-          <span class="se select2" @click="inOn">删除</span>
+          <span
+            class="se select1"
+            @click="inOff"
+          >取消</span>
+          <span
+            class="se select2"
+            @click="inOn"
+          >删除</span>
         </div>
       </div>
     </div>

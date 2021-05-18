@@ -12,7 +12,9 @@ Vue.use(VueRouter)
 
 const routes = [
   {
+    // 路径
     path: '/',
+    // 重定向到home
     redirect: '/home',
     component: Home
   },
