@@ -27,3 +27,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 4.多个数据的请求处理
 
 5.因为后端返回的数据都是分页的所以搜索功能 仓库存储不够完善 只能搜索到部分分页的数据
+
+6.updata =>   baseURL: 'http://152.136.185.210:7878/api/hy66',
